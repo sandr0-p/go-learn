@@ -1,0 +1,50 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "_git_purge_remote",
+            "type": "shell",
+            "command": "git",
+            "args": [
+                "fetch",
+                "--prune"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "_git_remove_local",
+            "type": "shell",
+            "command": "git",
+            "args": [
+                "branch",
+                "-vv",
+                "|",
+                "grep",
+                "': gone]'",
+                "|",
+                "grep",
+                "-v",
+                "'\\*'",
+                "|",
+                "awk",
+                "'{ print $1 }'",
+                "|",
+                "xargs",
+                "-r",
+                "git",
+                "branch",
+                "-D"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Git - Clean",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "_git_purge_remote",
+                "_git_remove_local"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
