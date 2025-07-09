@@ -15,7 +15,7 @@ RUN exercism configure --workspace /development/
 
 # Install GO
 RUN wget https://go.dev/dl/go1.24.5.linux-arm64.tar.gz
-RUN tar -C /usr/bin -xzf go1.24.5.linux-arm64.tar.gz
+RUN rm -rf /usr/local/go && tar -C /usr/local -xzf go1.24.5.linux-arm64.tar.gz
 
 
 # Get and Install Node

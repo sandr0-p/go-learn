@@ -42,4 +42,6 @@ rm ~/.fzf.zsh
 cp ./install/shell/.zshrc ~/.zshrc
 cp ./install/shell/.fzf.zsh ~/.fzf.zsh
 cp ./install/shell/.p10k.zsh ~/.p10k.zsh
-cp ./install/shell/exercism_completion.zsh ~/exercism_completion.zsh
+
+mkdir ~/.oh-my-zsh/plugins/exercism
+cp ./install/shell/exercism_completion.zsh ~/.oh-my-zsh/plugins/exercism/_exercism

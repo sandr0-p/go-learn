@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting exercism)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,7 +113,5 @@ alias bat=batcat
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-[ -f ~/exercism_completion.zsh ] && source ~/exercism_completion.zsh
 
 export PATH="$PATH:/opt/mssql-tools18/bin:/root/.dotnet/tools:/usr/local/go/bin"
