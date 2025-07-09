@@ -1,0 +1,22 @@
+{
+  "name": "Ruby Learning Environment",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "development",
+  "workspaceFolder": "/development",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "eamodio.gitlens",
+        "foxundermoon.shell-format",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "github.vscode-pull-request-github",
+        "golang.go",
+        "Gruntfuggly.todo-tree",
+        "jgclark.vscode-todo-highlight"
+      ],
+      "settings": {}
+    }
+  },
+  "shutdownAction": "stopCompose"
+}
