@@ -1,5 +1,5 @@
 {
-  "name": "Ruby Learning Environment",
+  "name": "Go Learning Environment",
   "dockerComposeFile": "docker-compose.yml",
   "service": "development",
   "workspaceFolder": "/development",
