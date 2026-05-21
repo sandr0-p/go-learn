@@ -14,8 +14,8 @@ RUN exercism configure --token=d1818b69-752e-41ef-8064-f6444b01991b
 RUN exercism configure --workspace /development/
 
 # Install GO
-RUN wget https://go.dev/dl/go1.24.5.linux-arm64.tar.gz
-RUN rm -rf /usr/local/go && tar -C /usr/local -xzf go1.24.5.linux-arm64.tar.gz
+RUN wget https://go.dev/dl/go1.26.3.linux-arm64.tar.gz
+RUN rm -rf /usr/local/go && tar -C /usr/local -xzf go1.26.3.linux-arm64.tar.gz
 
 
 # Get and Install Node
