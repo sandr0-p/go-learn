@@ -18,9 +18,24 @@ func main() {
 		{Name: "Prefect, Ford", Score: 64},
 	}
 
+	fmt.Println("Select score to print:")
+	var option string
+	fmt.Scanln(&option)
+	var index int
+	switch option {
+	case "1":
+		index = 0
+	case "2":
+		index = 1
+	case "3":
+		index = 2
+	default:
+		fmt.Println("Unknown option, defaulting to 1")
+		index = 0
+	}
+	fmt.Println()
+
 	fmt.Println("Student scores")
 	fmt.Println(strings.Repeat("-", 14))
-	fmt.Println(students[0].Name, students[0].Score)
-	fmt.Println(students[1].Name, students[1].Score)
-	fmt.Println(students[2].Name, students[2].Score)
+	fmt.Println(students[index].Name, students[index].Score)
 }
