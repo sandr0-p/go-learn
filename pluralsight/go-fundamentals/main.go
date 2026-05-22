@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"strings"
+	"strconv"
 )
 
 type Student struct {
@@ -12,30 +12,35 @@ type Student struct {
 
 func main() {
 
-	students := []Student{
-		{Name: "Dent, Arthur", Score: 87},
-		{Name: "MacMillan, Tricia", Score: 96},
-		{Name: "Prefect, Ford", Score: 64},
-	}
+	students := []Student{}
 
-	fmt.Println("Select score to print:")
-	var option string
-	fmt.Scanln(&option)
-	var index int
-	switch option {
-	case "1":
-		index = 0
-	case "2":
-		index = 1
-	case "3":
-		index = 2
-	default:
-		fmt.Println("Unknown option, defaulting to 1")
-		index = 0
-	}
-	fmt.Println()
+	shouldContinue := true
 
-	fmt.Println("Student scores")
-	fmt.Println(strings.Repeat("-", 14))
-	fmt.Println(students[index].Name, students[index].Score)
+	for shouldContinue {
+
+		fmt.Println("Select an option:")
+		fmt.Println("1) Add student")
+		fmt.Println("2) Print students")
+		fmt.Println("q) Quit")
+
+		var option string
+		fmt.Scanln(&option)
+
+		switch option {
+		case "1":
+			fmt.Println("Enter student name and score:")
+			var name, rawScore string
+			fmt.Scanln(&name, &rawScore)
+			s, _ := strconv.Atoi(rawScore)
+			students = append(students, Student{Name: name, Score: s})
+		case "2":
+			fmt.Println("Student scores")
+			fmt.Println("----------------")
+			for _, s := range students {
+				fmt.Println(s.Name, s.Score)
+			}
+		case "q":
+			shouldContinue = false
+		}
+	}
 }
