@@ -28,7 +28,7 @@ func main() {
 
 		switch option {
 		case "1":
-			students = append(addStudent(students))
+			students = addStudent(students)
 		case "2":
 			printReport(students)
 		case "q":
